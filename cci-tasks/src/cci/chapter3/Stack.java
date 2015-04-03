@@ -1,12 +1,14 @@
 package cci.chapter3;
 
-public class Stack<T> {
+public class Stack<T> implements IStack<T> {
 	private Node<T> top;
+	private int size = 0;
 	
 	public T pop() {
 		if(top != null) {
 			Node<T> tmp = top;
 			top = top.next;
+			size--;
 			return tmp.data;
 		}
 		throw new StackIsEmptyException();
@@ -24,10 +26,15 @@ public class Stack<T> {
 		node.data = data;
 		node.next = top;
 		top = node;
+		size++;
 	}
 	
 	public boolean isEmpty() {
 		return top == null;
+	}
+	
+	public int size() {
+		return size;
 	}
 
 	public static class StackIsEmptyException extends UnsupportedOperationException {

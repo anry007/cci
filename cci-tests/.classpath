@@ -3,8 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/cci-tasks"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="ext/hamcrest/hamcrest-all-1.3.jar"/>
 	<classpathentry kind="lib" path="ext/powermock/powermock-mockito-1.6.2-full.jar"/>
+	<classpathentry kind="lib" path="ext/junit/junit.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

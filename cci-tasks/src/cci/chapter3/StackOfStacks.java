@@ -1,6 +1,6 @@
 package cci.chapter3;
 
-public class StackOfStacks<T> {
+public class StackOfStacks<T> implements IStack<T> {
 	Stack<Stack<T>> stacks;
 	int maxCapacity;
 	int currentCapacity;
@@ -41,5 +41,18 @@ public class StackOfStacks<T> {
 	
 	public boolean isEmpty() {
 		return stacks.isEmpty();
+	}
+	
+	public int getNumberOfPartitions() {
+		return stacks.size();
+	}
+	
+	public int size() {
+		if(isEmpty())
+		{
+			return 0;
+		} else {
+			return (getNumberOfPartitions() - 1) * maxCapacity + currentCapacity;
+		}
 	}
 }
