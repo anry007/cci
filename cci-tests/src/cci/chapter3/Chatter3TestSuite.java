@@ -8,7 +8,8 @@ import org.junit.runners.Suite;;
 	QueueTests.class,
 	StackTests.class,
 	StackOfStasksTests.class,
-	StackBasedQueueTests.class
+	StackBasedQueueTests.class,
+	SortableStackTests.class
 })
 
 public class Chatter3TestSuite {
