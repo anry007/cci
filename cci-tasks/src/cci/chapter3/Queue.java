@@ -1,9 +1,12 @@
 package cci.chapter3;
 
-public class Queue<T> {
+import cci.chapter3.Stack.StackIsEmptyException;
+
+public class Queue<T> implements IQueue<T> {
 	private Node<T> start;
 	private Node<T> end;
 	
+	@Override
 	public T dequeue() {
 		if(start != null) {
 			Node<T> tmp = start;
@@ -14,6 +17,7 @@ public class Queue<T> {
 		throw new QueueIsEmptyException();
 	}
 	
+	@Override
 	public void enqueue(T data) {
 		Node<T> node = new Node<T>();
 		node.data = data;
@@ -26,6 +30,7 @@ public class Queue<T> {
 		}
 	}
 	
+	@Override
 	public boolean isEmpty() {
 		return start == null;
 	}
@@ -35,6 +40,10 @@ public class Queue<T> {
 
 		public QueueIsEmptyException() {
 			super("Queue is empty");
+		}
+
+		public QueueIsEmptyException(StackIsEmptyException e) {
+			super("Queue is empty", e);
 		}
 	}
 }
