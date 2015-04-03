@@ -1,5 +1,8 @@
 package cci.chapter4;
 
+import cci.chapter3.IQueue;
+import cci.chapter3.Queue;
+
 public class TreeNode<T> {
 	public T data;
 	public TreeNode<T> left;
@@ -17,5 +20,39 @@ public class TreeNode<T> {
 	
 	public boolean isLeafNode() {
 		return left == null && right == null;
+	}
+	
+	/**
+	 * Given a sorted (increasing order) array, write an algorithm to create a binary tree with
+	 * minimal height.
+	 * 
+	 * @param array array to create tree from
+	 * @return binary tree with the smallest depth
+	 */
+	public static <Type> TreeNode<Type> fromArray(Type[] array) {
+		if(array.length > 0 ) {
+			TreeNode<Type> root = new TreeNode<Type>(array[0]);
+			if(array.length > 1) {
+				IQueue<TreeNode<Type>> queue = new Queue<>();
+				queue.enqueue(root);
+				for(int i = 1; i < array.length; i += 2) {
+					TreeNode<Type> currentElement = queue.dequeue();
+					
+					TreeNode<Type> leftChild = new TreeNode<Type>(array[i]);
+					currentElement.left = leftChild;
+					queue.enqueue(leftChild);
+					
+					if(i + 1 < array.length) {
+						TreeNode<Type> rightChild = new TreeNode<Type>(array[i + 1]);
+						currentElement.right = rightChild;
+						queue.enqueue(rightChild);
+					}
+				}
+			}
+			
+			return root;
+		}
+		
+		return null;
 	}
 }

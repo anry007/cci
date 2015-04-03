@@ -5,7 +5,9 @@ import org.junit.runners.Suite;;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	BalancableTreeTests.class
+	BalancableTreeTests.class,
+	GraphTests.class,
+	TreeNodeTests.class
 })
 
 public class Chatter4TestSuite {
