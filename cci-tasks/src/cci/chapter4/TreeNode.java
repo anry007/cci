@@ -1,7 +1,12 @@
 package cci.chapter4;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import cci.chapter3.IQueue;
 import cci.chapter3.Queue;
+import cci.chapter3.Stack;
 
 public class TreeNode<T> {
 	public T data;
@@ -51,6 +56,20 @@ public class TreeNode<T> {
 			}
 			
 			return root;
+		}
+		
+		return null;
+	}
+	
+	public static <T> Set<List<T>> toLists(TreeNode<T> root) {
+		if(root == null)
+			return null;
+		
+		Set<List<T>> lists = new HashSet<>();
+		Stack<TreeNode<T>> stack = new Stack<TreeNode<T>>();
+		stack.push(root);
+		while(!stack.isEmpty()) {
+			TreeNode<T> element = stack.pop();
 		}
 		
 		return null;
