@@ -1,8 +1,8 @@
 package cci.chapter3;
 
 public class StackBasedQueue<T> implements IQueue<T>{
-	private Stack<T> inStack = new Stack<T>();
-	private Stack<T> outStack = new Stack<T>();
+	private IStack<T> inStack = new Stack<T>();
+	private IStack<T> outStack = new Stack<T>();
 	
 	@Override
 	public T dequeue() {
