@@ -1,7 +1,5 @@
 package cci.chapter3;
 
-import cci.chapter3.Exceptions.*;
-
 public class Queue<T> {
 	private Node<T> start;
 	private Node<T> end;
@@ -30,5 +28,13 @@ public class Queue<T> {
 	
 	public boolean isEmpty() {
 		return start == null;
+	}
+
+	public static class QueueIsEmptyException extends UnsupportedOperationException {
+		private static final long serialVersionUID = 1777519214849154257L;
+
+		public QueueIsEmptyException() {
+			super("Queue is empty");
+		}
 	}
 }

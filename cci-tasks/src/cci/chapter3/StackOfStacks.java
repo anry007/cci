@@ -11,6 +11,10 @@ public class StackOfStacks<T> {
 		stacks = new Stack<Stack<T>>();
 	}
 	
+	public T peek() {
+		return stacks.peek().peek();
+	}
+	
 	public T pop() {
 		Stack<T> currentStack = stacks.peek();
 		T value = currentStack.pop();

@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
 
 import cci.chapter3.Queue;
-import cci.chapter3.Exceptions.*;
+import cci.chapter3.Queue.QueueIsEmptyException;
 import org.junit.Test;
 
 public class QueueTests {
@@ -14,7 +14,7 @@ public class QueueTests {
 		Queue<Integer> queue = new Queue<Integer>();
 		try {
 			queue.dequeue();
-			
+			fail("dequeue call on empty queue did not throw, but expected"); 
 		} catch (QueueIsEmptyException e) {
 			// we expect this exception
 		}

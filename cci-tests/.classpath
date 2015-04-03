@@ -5,5 +5,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/cci-tasks"/>
 	<classpathentry kind="lib" path="D:/Git/cci/cci-tests/ext/hamcrest/hamcrest-all-1.3.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/Git/cci/cci-tests/ext/powermock/powermock-mockito-1.6.2-full.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
