@@ -2,7 +2,6 @@ package cci.chapter4;
 
 import java.util.AbstractMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import cci.chapter3.IQueue;
 import cci.chapter3.Queue;
@@ -43,17 +42,10 @@ public class BalancableTree<T> extends TreeNode<T>{
 				}
 			}
 			
-			pushNotNullNodeToQueue(queue, level, node.left);
-			pushNotNullNodeToQueue(queue, level, node.right);
+			TreeNode.pushNotNullNodeToQueue(queue, level, node.left);
+			TreeNode.pushNotNullNodeToQueue(queue, level, node.right);
 		}
 		
 		return true;
-	}
-
-	private void pushNotNullNodeToQueue(IQueue<Entry<TreeNode<T>, Integer>> queue, int level, TreeNode<T> childNode) {
-		if(childNode != null) {
-			Map.Entry<TreeNode<T>, Integer> childNodeDescriptor = new AbstractMap.SimpleEntry<>(childNode, level + 1);
-			queue.enqueue(childNodeDescriptor);
-		}
 	}
 }
